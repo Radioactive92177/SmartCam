@@ -1,7 +1,7 @@
 import cv2
 
 cap  = cv2.VideoCapture(0)
-face_model = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+face_model = cv2.CascadeClassifier('Models\haarcascade_frontalface_default.xml')
 #eyes_model = cv2.CascadeClassifier('haarcascade_eye.xml')
 
 
