@@ -29,7 +29,7 @@ while True:
         eye_x2 = eye_x1 + eyes_cor[0][2]
         eye_y2 = eye_y1 + eyes_cor[0][3]
 """
-        photo = cv2.rectangle(photo, (face_x1,face_y1), (face_x2,face_y2), [0,255,0], 2)
+        #photo = cv2.rectangle(photo, (face_x1,face_y1), (face_x2,face_y2), [0,255,0], 2)
         #photo = cv2.rectangle(photo, (eye_x1,eye_y1), (eye_x2,eye_y2), [0,255,0], 2)
 
         
