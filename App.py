@@ -1,5 +1,7 @@
 import cv2
+import win32com.client as wc
 
+speak = wc.Dispatch("Sapi.SpVoice")
 cap  = cv2.VideoCapture(0)
 face_model = cv2.CascadeClassifier('Models\haarcascade_frontalface_default.xml')
 #eyes_model = cv2.CascadeClassifier('haarcascade_eye.xml')
@@ -14,6 +16,14 @@ while True:
 
     if len(face_cor) == 0:
         pass
+
+    elif len(face_cor) == 1:
+
+        cv2.putText(photo,f"There's only:{len(face_cor)} person",(0,25),cv2.FONT_HERSHEY_SIMPLEX,0.5,(255,255,51),1)
+        cv2.imshow('App', photo)
+        if cv2.waitKey(10) == 13:
+            break
+
     else:
         # Drawing rectangle around the face
         face_x1 = face_cor[0][0]
@@ -23,12 +33,13 @@ while True:
         face_y2 = face_y1 + face_cor[0][3]
 
         # Drawing rectangle around the eyes
-        """eye_x1 = eyes_cor[0][0]
+        """
+        eye_x1 = eyes_cor[0][0]
         eye_y1 = eyes_cor[0][1]
 
         eye_x2 = eye_x1 + eyes_cor[0][2]
         eye_y2 = eye_y1 + eyes_cor[0][3]
-"""
+        """
         #photo = cv2.rectangle(photo, (face_x1,face_y1), (face_x2,face_y2), [0,255,0], 2)
         #photo = cv2.rectangle(photo, (eye_x1,eye_y1), (eye_x2,eye_y2), [0,255,0], 2)
 
